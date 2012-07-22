@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> cREaDDIT </title>
+    </head>
+    <body>
+        <h1 data-bind="text: threadData.title"></h1>
+
+        <ul data-bind="template: { name: 'comments-template', foreach: threadComments }"></ul>
+
+        <script type="text/html" id="comments-template">
+            <li data-bind="text: body"></li>
+            <ul data-bind="template: { name: 'comments-template', foreach: replies }"></ul>
+        </script>
+
+        <script type="text/javascript" src="js/knockout-2.1.0.debug.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/sample_data.josn.js"></script>
+        <script type="text/javascript" src="js/creaddit.js"></script>
+    </body>
+</html>
